@@ -10,3 +10,5 @@ License: GPL-3
 Depends:
     R (>= 3.2.3)
 RoxygenNote: 5.0.1
+URL: https://github.com/yz4/WilliamsFaculty
+BugReports:https://github.com/yz4/WilliamsFaculty/issues

@@ -8,7 +8,7 @@ Description: This package calculates the average age of Williams College
     faculty and presents the result in an interesting visualized way
 License: GPL-3
 Depends:
-    R (>= 3.2.3)
+    R (>= 3.1.0)
 RoxygenNote: 5.0.1
 URL: https://github.com/yz4/WilliamsFaculty
 BugReports:https://github.com/yz4/WilliamsFaculty/issues

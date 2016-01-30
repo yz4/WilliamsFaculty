@@ -11,5 +11,5 @@
 #'    \item{age}{the age of the professor, in years}
 #'  }
 #'  @source \url{http://web.williams.edu/admin/registrar//catalog/archive.html}
-"data"
+"age"
 #> [1] "data"

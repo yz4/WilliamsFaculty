@@ -2,6 +2,6 @@
 #' 
 #' @return The average age of all Williams faculty
 average_age <- function() {
-  mean(data$Age)
+  mean(age$Age)
 }
 

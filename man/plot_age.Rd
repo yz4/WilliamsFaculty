@@ -21,7 +21,8 @@ plot_age()
 \code{\link{plot_by_dpmt}} for histograms by department, \code{\link{plot_by_gender}}
 for histograms by gender,
 
-Other plotting.functions: \code{\link{plot_by_dpmt}},
-  \code{\link{plot_by_gender}}
+Other plotting.functions: \code{\link{color_by_dpmt}},
+  \code{\link{color_by_gender}},
+  \code{\link{plot_by_dpmt}}, \code{\link{plot_by_gender}}
 }
 

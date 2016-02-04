@@ -7,11 +7,12 @@
 #' @param gender This input should be one of the genders
 #' @family plotting functions
 #' @seealso \code{\link{plot_age}} for histogram of all ages, \code{\link{plot_by_dpmt}}
-#' for histograms by department,
+#' for histograms by department, \code{\link{color_by_gender}} for colored scatter plot by gender, and
+#' \code{\link{color_by_dpmt}} for colored scatter plot by department
 #' @return a histogram of the age distribution of Williams faculty of the gender selected
 #' @examples 
-#' plot_by_gender("Male")
-#' plot_by_gender("female")
+#' plot_by_gender('Male')
+#' plot_by_gender('female')
 #' @export
 plot_by_gender <- function(gender) {
     data(data)

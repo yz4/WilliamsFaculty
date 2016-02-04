@@ -18,14 +18,16 @@ a histogram of the age distribution of Williams faculty of that gender. If
 the input is not a gender, an error message would be returned.
 }
 \examples{
-plot_by_gender("Male")
-plot_by_gender("female")
+plot_by_gender('Male')
+plot_by_gender('female')
 }
 \seealso{
 \code{\link{plot_age}} for histogram of all ages, \code{\link{plot_by_dpmt}}
-for histograms by department,
+for histograms by department, \code{\link{color_by_gender}} for colored scatter plot by gender, and
+\code{\link{color_by_dpmt}} for colored scatter plot by department
 
-Other plotting.functions: \code{\link{plot_age}},
+Other plotting.functions: \code{\link{color_by_dpmt}},
+  \code{\link{color_by_gender}}, \code{\link{plot_age}},
   \code{\link{plot_by_dpmt}}
 }
 

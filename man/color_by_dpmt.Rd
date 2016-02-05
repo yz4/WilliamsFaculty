@@ -4,7 +4,7 @@
 \alias{color_by_dpmt}
 \title{Visualizing professor ages by department}
 \usage{
-color_by_dpmt(dpmt_displayed = NULL)
+color_by_dpmt(dpmt_displayed)
 }
 \arguments{
 \item{dpmt_displayed}{This input should include the names of the departments desired, in the form of a list}

@@ -4,7 +4,7 @@
 \alias{age_summary}
 \title{Generates a summary of relevant data}
 \usage{
-age_summary()
+age_summary(dpmt = FALSE, gender = FALSE)
 }
 \value{
 data frame containing summary of relevant data

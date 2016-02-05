@@ -19,7 +19,7 @@
 #' color_by_dpmt()
 #' color_by_dpmt(c("Theatre/Dance","Biology/Environmental Studies", "Anthropology/Sociology"))
 #' @export
-color_by_dpmt <- function(dpmt_displayed = NULL) {
+color_by_dpmt <- function(dpmt_displayed) {
     data(data)
     temp_data <- data
     temp_data[["index"]] <- c(1:403)
@@ -37,6 +37,7 @@ color_by_dpmt <- function(dpmt_displayed = NULL) {
                 index, col = c))
             c = c + 1
         }
+        points(20,)
         legend("topright", inset = c(-0.58, -0.14), col = 1:22, legend = departmentlist, 
             bty = "n", pch = 1, title = "Departments", cex = 0.6)
     } else {

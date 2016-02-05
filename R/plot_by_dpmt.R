@@ -20,6 +20,8 @@
 #' @export
 plot_by_dpmt <- function(dpmt) {
     data(data)
+    dev.off()
+    ## adjust to default margins
     departmentlist <- unique(data$department)
     if (dpmt %in% departmentlist) {
         with(subset(data, department == as.character(dpmt)), hist(age, main = paste("Age Distribution of Williams Faculty in", 

@@ -7,5 +7,5 @@
 #' @export
 dt_table <- function() {
     data(data)
-    datatable(data, rownames = FALSE, filter = "top", caption = "The data is retrieved from the Williams college archive for the\n            2013-14 school year")
+    DT::datatable(data, rownames = FALSE, filter = "top", caption = "The data is retrieved from the Williams college archive for the\n            2013-14 school year")
 } 

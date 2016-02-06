@@ -18,13 +18,17 @@ plot_by_gender <- function(gender) {
     data(data)
     par(mar = c(5.1, 4.1, 4.1, 2.1), xpd = FALSE)
     ## adjust to default margins
-    if (tolower(gender) == "male") {
-        with(subset(data, gender == "Male"), hist(age, main = "Age Distribution of Male Williams Faculty", 
-            xlab = "Age (by years)"))
-    } else if (tolower(gender) == "female") {
-        with(subset(data, gender == "Female"), hist(age, main = "Age Distribution of Female Williams Faculty", 
-            xlab = "Age (by years)"))
+    if (missing(gender)) {
+        print("Please select a gender.")
     } else {
-        print("Error, please select a gender")
+        if (tolower(gender) == "male") {
+            with(subset(data, gender == "Male"), hist(age, main = "Age Distribution of Male Williams Faculty", 
+                xlab = "Age (by years)"))
+        } else if (tolower(gender) == "female") {
+            with(subset(data, gender == "Female"), hist(age, main = "Age Distribution of Female Williams Faculty", 
+                xlab = "Age (by years)"))
+        } else {
+            print("Error, please select a gender")
+        }
     }
 } 

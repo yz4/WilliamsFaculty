@@ -15,7 +15,7 @@ a histogram of the age distribution of Williams faculty of the department
 selected
 }
 \description{
-This function takes an input, and if that input is a department, it will create
+This function generates plots of takes an input, and if that input is a department, it will create
 a histogram of the age distribution of Williams faculty of that department. If
 the input is not a department, an error message would be returned. If the input
 is one of the department in a combined category, a histogram of that category

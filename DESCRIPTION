@@ -14,7 +14,7 @@ License: GPL-3
 Depends: 
     R (>= 3.1.0)
 RoxygenNote: 5.0.1
-Lazyload: True
+LazyData: true
 URL: https://github.com/yz4/WilliamsFaculty
 BugReports: https://github.com/yz4/WilliamsFaculty/issues
 Suggests: testthat

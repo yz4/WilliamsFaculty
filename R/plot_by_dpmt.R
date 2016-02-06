@@ -37,7 +37,8 @@ plot_by_dpmt <- function(dpmt) {
             main = "Age Distribution of Williams Faculty in Biology/Environmental Studies", 
             xlab = "Age (by years)"))
     } else if (dpmt == "Marine Science" || dpmt == "Geoscience") {
-        with(subset(data, department == "Marine Science/Geoscience"), hist(age, main = "Age Distribution of Williams Faculty in Marine Science/Geoscience", 
+        with(subset(data, department == "Marine Science/Geoscience"), hist(age, 
+            main = "Age Distribution of Williams Faculty in Marine Science/Geoscience", 
             xlab = "Age (by years)"))
     } else if (dpmt == "Theatre" || dpmt == "Dance") {
         with(subset(data, department == "Theatre/Dance"), hist(age, main = "Age Distribution of Williams Faculty in Theatre/Dance", 

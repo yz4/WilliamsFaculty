@@ -6,9 +6,21 @@
 \usage{
 test_age(dpmt = TRUE, gender = TRUE)
 }
+\arguments{
+\item{dpmt}{This argument is initialized as TRUE, and controls which test is performed}
+
+\item{gender}{This argument is initialized as TRUE, and controls which test is performed}
+}
+\value{
+different statistical analysis on the data depending on the input
+}
 \description{
 This function runs statistical analysis on the data. The tests run include a binomial
 test for the number of female professors, a two-sample t-test with male and female professor
-ages, and a one-way ANOVA with professor ages in each department.
+ages, a one-way ANOVA with professor ages in each department and a chi-squared test of independence
+with gender and departments. The type of test performed is depended on the input: \cr
+If dpmt is TRUE and gender is FALSE, the ANOVA test is performed. \cr
+If dpmt is FALSE and gender is TRUE, the binomial test and the t-test are performed. \cr
+If both are TRUE, the chi-squared test of independence is performed.
 }
 

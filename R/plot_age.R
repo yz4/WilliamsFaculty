@@ -1,7 +1,6 @@
 #' Plots the age distribution of all Williams faculty
 #' 
 #' This functions creates a histogram of the age distribution of all Williams faculty.
-#' @return a histogram of the age distribution of all Williams faculty
 #' @family plotting functions
 #' @seealso \code{\link{plot_by_dpmt}} for histograms by department, \code{\link{plot_by_gender}}
 #' for histograms by gender, 

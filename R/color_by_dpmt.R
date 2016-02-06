@@ -4,9 +4,11 @@
 #' department. The index represents the order of the professors in the original data, since
 #' the original data is in alphabetical order, the index gives a sense of which letter the
 #' professor's last name starts with. A legend is included indicating which color represents which
-#' department. If there is no input, the scatter plot will have points from all 22 departments.
-#' If an input is given, the scatter plot will only contain points for the professors in the specified
+#' department. If there is no input, the scatter plot will have points from all 22 departments, with the oldest
+#' and youngest professors pointed out. If an input is given, the scatter plot will only contain points for the professors in the specified
 #' departments. If the input contains a string that is not a department, an error message will be printed.
+#' Note: the legend may overlap with the plot in some RStudio layouts, adjust the size of the plot area to 
+#' default for clear graph.
 #' 
 #' @param dpmt_displayed This input should include the names of the departments desired, in the form of a list
 #' @family plotting functions
@@ -17,7 +19,7 @@
 #' @return a colored scatter plot of Williams faculty ages by department
 #' @examples 
 #' color_by_dpmt()
-#' color_by_dpmt(c("Theatre/Dance","Biology/Environmental Studies", "Anthropology/Sociology"))
+#' color_by_dpmt(c('Theatre/Dance','Biology/Environmental Studies', 'Anthropology/Sociology'))
 #' @export
 color_by_dpmt <- function(dpmt_displayed) {
     data(data)
@@ -37,9 +39,12 @@ color_by_dpmt <- function(dpmt_displayed) {
                 index, col = c))
             c = c + 1
         }
-        points(20,)
-        legend("topright", inset = c(-0.58, -0.14), col = 1:22, legend = departmentlist, 
-            bty = "n", pch = 1, title = "Departments", cex = 0.6)
+        points(20, 80, pch = 3, col = "black")  ## oldest professor
+        points(259, 27, pch = 4, col = "black")  ## youngest professor
+        legend("topright", inset = c(-0.58, -0.14), col = c(1:22, "black", "black"), 
+            legend = c(as.character(departmentlist), "Oldest", "Youngest"), bty = "n", 
+            pch = c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+                1, 1, 3, 4), title = "Departments", cex = 0.6)
     } else {
         contained <- TRUE
         for (i in dpmt_displayed) {
@@ -55,7 +60,7 @@ color_by_dpmt <- function(dpmt_displayed) {
                 palette("default")
             }
             with(temp_data[temp_data$department == "Physics/Astronomy", ], plot(age ~ 
-                index, xlim = c(0, 405), ylim = c(26, 81), col = 0, main="Williams Faculty Age by Department"))
+                index, xlim = c(0, 405), ylim = c(26, 81), col = 0, main = "Williams Faculty Age by Department"))
             c <- 1  ## color variable
             for (i in departmentlist) {
                 with(temp_data[temp_data$department == as.character(i), ], points(age ~ 

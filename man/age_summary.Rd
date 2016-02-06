@@ -6,17 +6,27 @@
 \usage{
 age_summary(dpmt = FALSE, gender = FALSE)
 }
+\arguments{
+\item{dpmt}{This argument is initialized as FALSE. When set to TRUE, the function generates
+summary of data with regards to departments}
+
+\item{gender}{This argument is initialized as FALSE. Wehn set to TRUE, the function generates 
+summary of data with regards to gender}
+}
 \value{
-data frame containing summary of relevant data
+summaries of data depending on input
 }
 \description{
-This functions creates and prints a data frame containing relevant information
-about the data, including the total number of professors, the age difference between
-the oldest and youngest professor, the name of the oldest professor, the name of the
-youngest professor, the average age, the standard deviation of the ages, and the
-variance of the ages.
+This functions generates summaries of the data. If neither 'dpmt' or 'gender'
+is specified as TRUE, the function returns a summary table with attributes of the whole dataframe.
+If 'gender' is set to true, the function returns a summary table with attributes of the data with
+regards to gender. If 'dpmt' is set to true, the function generates a DT data table with attributes of
+the data with regards to departments, and also a qplot that displays each professor under each department
+in a clear manner.
 }
 \examples{
 age_summary()
+age_summary(dpmt=TRUE)
+age_summary(gender=TRUE)
 }
 

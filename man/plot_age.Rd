@@ -8,8 +8,6 @@ plot_age()
 }
 \value{
 a histogram of the age distribution of all Williams faculty
-
-a histogram of the age distribution of all Williams faculty
 }
 \description{
 This functions creates a histogram of the age distribution of all Williams faculty.

@@ -14,7 +14,7 @@ This function creates a colored scatter plot with each color representing a diff
 gender. The index represents the order of the professors in the original data, since
 the original data is in alphabetical order, the index gives a sense of which letter the
 professor's last name starts with. A legend is included indicating which color represents which
-gender.
+gender and the oldest and youngest professors are pointed out.
 }
 \examples{
 color_by_gender()

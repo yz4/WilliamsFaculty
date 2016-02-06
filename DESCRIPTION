@@ -4,8 +4,12 @@ Title: Average Age of Williams College Faculty
 Version: 1.0
 Date: 2016-01-17
 Authors@R: as.person(c("Yiheng Zhang <yz4@williams.edu> [aut, cre]"))
-Description: This package calculates the average age of Williams College
-    faculty and presents the result in an interesting visualized way
+Description: This package explores the data of the Williams faculty age, with special
+             attention paid to two factors: department and gender. The package provides functions that generate 
+             summary tables and functions that generate interesting visual presentations of the data. Some functions
+             generate different summaries and plots depending on the user's input. In addition, the package also contains a 
+             function that performs statistical analysis on the data.
+Imports: ggplot2, DT
 License: GPL-3
 Depends:
     R (>= 3.1.0)

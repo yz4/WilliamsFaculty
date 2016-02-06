@@ -17,13 +17,15 @@ This function creates a colored scatter plot with each color representing a diff
 department. The index represents the order of the professors in the original data, since
 the original data is in alphabetical order, the index gives a sense of which letter the
 professor's last name starts with. A legend is included indicating which color represents which
-department. If there is no input, the scatter plot will have points from all 22 departments.
-If an input is given, the scatter plot will only contain points for the professors in the specified
+department. If there is no input, the scatter plot will have points from all 22 departments, with the oldest
+and youngest professors pointed out. If an input is given, the scatter plot will only contain points for the professors in the specified
 departments. If the input contains a string that is not a department, an error message will be printed.
+Note: the legend may overlap with the plot in some RStudio layouts, adjust the size of the plot area to 
+default for clear graph.
 }
 \examples{
 color_by_dpmt()
-color_by_dpmt(c("Theatre/Dance","Biology/Environmental Studies", "Anthropology/Sociology"))
+color_by_dpmt(c('Theatre/Dance','Biology/Environmental Studies', 'Anthropology/Sociology'))
 }
 \seealso{
 \code{\link{plot_age}} for histogram of all ages, \code{\link{plot_by_dpmt}}

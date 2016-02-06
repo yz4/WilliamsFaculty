@@ -11,9 +11,10 @@ Description: This package explores the data of the Williams faculty age, with sp
              function that performs statistical analysis on the data.
 Imports: ggplot2, DT
 License: GPL-3
-Depends:
+Depends: 
     R (>= 3.1.0)
 RoxygenNote: 5.0.1
 Lazyload: True
 URL: https://github.com/yz4/WilliamsFaculty
-BugReports:https://github.com/yz4/WilliamsFaculty/issues
+BugReports: https://github.com/yz4/WilliamsFaculty/issues
+Suggests: testthat

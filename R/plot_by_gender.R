@@ -16,7 +16,7 @@
 #' @export
 plot_by_gender <- function(gender) {
     data(data)
-    dev.off()
+    par(mar = c(5.1, 4.1, 4.1, 2.1), xpd = FALSE)
     ## adjust to default margins
     if (tolower(gender) == "male") {
         with(subset(data, gender == "Male"), hist(age, main = "Age Distribution of Male Williams Faculty", 

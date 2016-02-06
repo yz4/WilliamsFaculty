@@ -10,7 +10,7 @@
 #' @export
 plot_age <- function() {
     data(data)
-    dev.off()
+    par(mar = c(5.1, 4.1, 4.1, 2.1), xpd = FALSE)
     ## adjust to default margins
     hist(data$age, main = "Age Distribution of Williams Faculty", xlab = "Age (by years)")
 } 

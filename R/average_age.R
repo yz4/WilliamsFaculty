@@ -8,6 +8,5 @@
 #' 
 #' @export
 average_age <- function() {
-    data(data)
     mean(data$age)
 } 

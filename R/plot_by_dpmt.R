@@ -19,7 +19,6 @@
 #' plot_by_dpmt('Theatre/Dance')
 #' @export
 plot_by_dpmt <- function(dpmt) {
-    data(data)
     par(mar = c(5.1, 4.1, 4.1, 2.1), xpd = FALSE)
     ## adjust to default margins
     departmentlist <- unique(data$department)

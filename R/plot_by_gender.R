@@ -15,7 +15,6 @@
 #' plot_by_gender('female')
 #' @export
 plot_by_gender <- function(gender) {
-    data(data)
     par(mar = c(5.1, 4.1, 4.1, 2.1), xpd = FALSE)
     ## adjust to default margins
     if (missing(gender)) {

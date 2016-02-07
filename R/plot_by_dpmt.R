@@ -27,7 +27,7 @@ plot_by_dpmt <- function(dpmt) {
     if (missing(dpmt)) {
       p <- ggplot2::qplot(department, age, data=data, geom="boxplot", fill=department,
                           main = "Boxplots of Professor Ages by Department", ylab="Age (by year)", xlab="Department")
-      p+theme(legend.text=element_text(size=6))+scale_x_discrete(breaks=NULL)
+      p+ggplot2::theme(legend.text=element_text(size=6))+scale_x_discrete(breaks=NULL)
     } else {
         if (dpmt %in% departmentlist) {
             with(subset(data, department == as.character(dpmt)), ggplot2::qplot(age, data=data[data$department=="Physics/Astronomy",],geom="histogram", bins= 15, color=gender,fill=I("brown"), main = paste("Age Distribution of Williams Faculty in", 

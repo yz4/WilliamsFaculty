@@ -22,7 +22,6 @@
 #' color_by_dpmt(c('Theatre/Dance','Biology/Environmental Studies', 'Anthropology/Sociology'))
 #' @export
 color_by_dpmt <- function(dpmt_displayed) {
-    data(data)
     temp_data <- data
     temp_data[["index"]] <- c(1:403)
     ## added index column to keep original indices
@@ -41,7 +40,7 @@ color_by_dpmt <- function(dpmt_displayed) {
         }
         points(20, 80, pch = 3, col = "black")  ## oldest professor
         points(259, 27, pch = 4, col = "black")  ## youngest professor
-        legend("topright", inset = c(-0.58, -0.14), col = c(1:22, "black", "black"), 
+        legend(430, 90, col = c(1:22, "black", "black"), 
             legend = c(as.character(departmentlist), "Oldest", "Youngest"), bty = "n", 
             pch = c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
                 1, 1, 3, 4), title = "Departments", cex = 0.6)

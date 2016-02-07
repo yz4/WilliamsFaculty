@@ -13,6 +13,7 @@
 #' @return different statistical analysis on the data depending on the input
 #' @export
 test_age <- function(dpmt = TRUE, gender = TRUE) {
+    data(data)
     if (dpmt && !gender) {
         results = aov(age ~ department, data = data)
         print(summary(results))

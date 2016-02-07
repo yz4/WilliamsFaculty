@@ -22,6 +22,7 @@
 #' color_by_dpmt(c('Theatre/Dance','Biology/Environmental Studies', 'Anthropology/Sociology'))
 #' @export
 color_by_dpmt <- function(dpmt_displayed) {
+    data(data)
     temp_data <- data
     temp_data[["index"]] <- c(1:403)
     ## added index column to keep original indices

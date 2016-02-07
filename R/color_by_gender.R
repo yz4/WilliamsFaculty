@@ -16,6 +16,7 @@
 #' color_by_gender()
 #' @export
 color_by_gender <- function() {
+    data(data)
     temp_data <- data
     temp_data[["index"]] <- c(1:403)
     par(mar = c(5.1, 4.1, 4.1, 8.1), xpd = TRUE)

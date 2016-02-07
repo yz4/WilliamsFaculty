@@ -18,6 +18,7 @@
 #' age_summary(gender=TRUE)
 #' @export
 age_summary <- function(dpmt = FALSE, gender = FALSE) {
+    data(data)
     if (!dpmt && !gender) {
         attributes <- c("Number of Professors", "Range of Ages", "Oldest", "Youngest", 
             "Average Age", "Standard Deviation", "Variance")

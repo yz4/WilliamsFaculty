@@ -16,6 +16,7 @@
 #' plot_by_gender('female')
 #' @export
 plot_by_gender <- function(gender) {
+    data(data)
     par(mar = c(5.1, 4.1, 4.1, 2.1), xpd = FALSE)
     ## adjust to default margins
     if (missing(gender)) {
@@ -29,7 +30,7 @@ plot_by_gender <- function(gender) {
             with(subset(data, gender == "Female"), ggplot2::qplot(age, main = "Age Distribution of Female Williams Faculty", 
                 geom = "bar", xlab = "Age (by years)"))
         } else {
-            print("Error, please select a gender")
+            print("Error, please select a gender.")
         }
     }
 } 

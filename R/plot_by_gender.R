@@ -20,8 +20,8 @@ plot_by_gender <- function(gender) {
     par(mar = c(5.1, 4.1, 4.1, 2.1), xpd = FALSE)
     ## adjust to default margins
     if (missing(gender)) {
-        ggplot2::qplot(gender, age, data=data, geom="boxplot",fill=gender, ylab="age (by years)", 
-                       main="Boxplots of Professor Ages by Gender")
+        ggplot2::qplot(gender, age, data = data, geom = "boxplot", fill = gender, 
+            ylab = "age (by years)", main = "Boxplots of Professor Ages by Gender")
     } else {
         if (tolower(gender) == "male") {
             with(subset(data, gender == "Male"), ggplot2::qplot(age, main = "Age Distribution of Male Williams Faculty", 

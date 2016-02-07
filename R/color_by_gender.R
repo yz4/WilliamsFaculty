@@ -26,7 +26,7 @@ color_by_gender <- function() {
     with(temp_data[temp_data$gender == "Female", ], points(age ~ index, col = 2))
     points(20, 80, pch = 3, col = "blue")  ## oldest professor
     points(259, 27, pch = 4, col = "blue")  ## youngest professor
-    legend("topright", inset = c(-0.3, 0.4), col = c(1, 2, "blue", "blue"), legend = c("Male", 
+    legend(430, 90, inset = c(-0.3, 0.4), col = c(1, 2, "blue", "blue"), legend = c("Male", 
         "Female", "Oldest", "Youngest"), bty = "n", pch = c(1, 1, 3, 4), title = "Gender", 
         cex = 0.7)
 } 

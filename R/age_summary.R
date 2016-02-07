@@ -40,7 +40,7 @@ age_summary <- function(dpmt = FALSE, gender = FALSE) {
             sd(male$age), sd(female$age)))
         df <- data.frame(attributes, attribute_data)
         print(df)
-    } 
+    }
     if (dpmt) {
         departments <- unique(data$department)
         number_of_professors <- NULL

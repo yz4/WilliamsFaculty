@@ -40,10 +40,10 @@ color_by_dpmt <- function(dpmt_displayed) {
         }
         points(20, 80, pch = 3, col = "black")  ## oldest professor
         points(259, 27, pch = 4, col = "black")  ## youngest professor
-        legend(430, 90, col = c(1:22, "black", "black"), 
-            legend = c(as.character(departmentlist), "Oldest", "Youngest"), bty = "n", 
-            pch = c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
-                1, 1, 3, 4), title = "Departments", cex = 0.6)
+        legend(430, 90, col = c(1:22, "black", "black"), legend = c(as.character(departmentlist), 
+            "Oldest", "Youngest"), bty = "n", pch = c(1, 1, 1, 1, 1, 1, 1, 1, 1, 
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 4), title = "Departments", 
+            cex = 0.6)
     } else {
         contained <- TRUE
         for (i in dpmt_displayed) {
@@ -66,7 +66,7 @@ color_by_dpmt <- function(dpmt_displayed) {
                   index, col = c))
                 c = c + 1  ## increment color variable
             }
-            legend("topright", inset = c(-0.58, -0.1), col = 1:length(departmentlist), 
+            legend(430, 90, inset = c(-0.58, -0.1), col = 1:length(departmentlist), 
                 legend = departmentlist, bty = "n", pch = 1, title = "Departments", 
                 cex = 0.6)
         } else {

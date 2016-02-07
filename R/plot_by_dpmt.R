@@ -25,27 +25,54 @@ plot_by_dpmt <- function(dpmt) {
     ## adjust to default margins
     departmentlist <- unique(data$department)
     if (missing(dpmt)) {
-      p <- ggplot2::qplot(department, age, data=data, geom="boxplot", fill=department,
-                          main = "Boxplots of Professor Ages by Department", ylab="Age (by year)", xlab="Department")
-      p+ggplot2::theme(legend.text=element_text(size=6))+scale_x_discrete(breaks=NULL)
+        p <- ggplot2::qplot(department, age, data = data, geom = "boxplot", fill = department, 
+            main = "Boxplots of Professor Ages by Department", ylab = "Age (by year)", 
+            xlab = "Department")
+        p + ggplot2::theme(legend.text = element_text(size = 6)) + scale_x_discrete(breaks = NULL)
     } else {
         if (dpmt %in% departmentlist) {
-            with(subset(data, department == as.character(dpmt)), ggplot2::qplot(age, data=data[data$department=="Physics/Astronomy",],geom="histogram", bins= 15, color=gender,fill=I("brown"), main = paste("Age Distribution of Williams Faculty in", 
-                sep = " ", as.character(dpmt)), xlab = "Age (by years)"))
+            with(subset(data, department == as.character(dpmt)), ggplot2::qplot(age, 
+                data = data[data$department == "Physics/Astronomy", ], geom = "histogram", 
+                bins = 15, color = gender, fill = I("brown"), main = paste("Age Distribution of Williams Faculty in", 
+                  sep = " ", as.character(dpmt)), xlab = "Age (by years)"))
         } else if (dpmt == "Mathematics" || dpmt == "Statistics") {
-            with(subset(data, department == "Mathematics/Statistics"), ggplot2::qplot(age, data=data[data$department=="Mathematics/Statistics",],geom="histogram", bins= 15, color=gender,fill=I("brown"), main = "Age Distribution of Williams Faculty in Mathematics/Statistics", xlab = "Age (by years)"))
+            with(subset(data, department == "Mathematics/Statistics"), ggplot2::qplot(age, 
+                data = data[data$department == "Mathematics/Statistics", ], geom = "histogram", 
+                bins = 15, color = gender, fill = I("brown"), main = "Age Distribution of Williams Faculty in Mathematics/Statistics", 
+                xlab = "Age (by years)"))
         } else if (dpmt == "Physics" || dpmt == "Astronomy") {
-            with(subset(data, department == "Physics/Astronomy"), ggplot2::qplot(age, data=data[data$department=="Physics/Astronomy",],geom="histogram", bins= 15, color=gender,fill=I("brown"), main = "Age Distribution of Williams Faculty in Physics/Astronomy", xlab = "Age (by years)"))
+            with(subset(data, department == "Physics/Astronomy"), ggplot2::qplot(age, 
+                data = data[data$department == "Physics/Astronomy", ], geom = "histogram", 
+                bins = 15, color = gender, fill = I("brown"), main = "Age Distribution of Williams Faculty in Physics/Astronomy", 
+                xlab = "Age (by years)"))
         } else if (dpmt == "Biology" || dpmt == "Environmental Studies") {
-            with(subset(data, department == "Biology/Environmental Studies"), ggplot2::qplot(age, data=data[data$department=="Biology/Environmental Studies",],geom="histogram", bins= 15, color=gender,fill=I("brown"), main = "Age Distribution of Williams Faculty in Biology/Environmental Studies", xlab = "Age (by years)"))
+            with(subset(data, department == "Biology/Environmental Studies"), ggplot2::qplot(age, 
+                data = data[data$department == "Biology/Environmental Studies", 
+                  ], geom = "histogram", bins = 15, color = gender, fill = I("brown"), 
+                main = "Age Distribution of Williams Faculty in Biology/Environmental Studies", 
+                xlab = "Age (by years)"))
         } else if (dpmt == "Marine Science" || dpmt == "Geoscience") {
-            with(subset(data, department == "Marine Science/Geoscience"), ggplot2::qplot(age, data=data[data$department=="Marine Science/Geoscience",],geom="histogram", bins= 15, color=gender,fill=I("brown"), main = "Age Distribution of Williams Faculty in Marine Science/Geoscience", xlab = "Age (by years)"))
+            with(subset(data, department == "Marine Science/Geoscience"), ggplot2::qplot(age, 
+                data = data[data$department == "Marine Science/Geoscience", ], 
+                geom = "histogram", bins = 15, color = gender, fill = I("brown"), 
+                main = "Age Distribution of Williams Faculty in Marine Science/Geoscience", 
+                xlab = "Age (by years)"))
         } else if (dpmt == "Theatre" || dpmt == "Dance") {
-            with(subset(data, department == "Theatre/Dance"), ggplot2::qplot(age, data=data[data$department=="Theatre/Dance",],geom="histogram", bins= 15, color=gender,fill=I("brown"), main = "Age Distribution of Williams Faculty in Theatre/Dance", xlab = "Age (by years)"))
+            with(subset(data, department == "Theatre/Dance"), ggplot2::qplot(age, 
+                data = data[data$department == "Theatre/Dance", ], geom = "histogram", 
+                bins = 15, color = gender, fill = I("brown"), main = "Age Distribution of Williams Faculty in Theatre/Dance", 
+                xlab = "Age (by years)"))
         } else if (dpmt == "Classics" || dpmt == "Romance Languages") {
-            with(subset(data, department == "Classics/Romance Languages"), ggplot2::qplot(age, data=data[data$department=="Classics/Romance Languages",],geom="histogram", bins= 15, color=gender,fill=I("brown"), main = "Age Distribution of Williams Faculty in Classics/Romance Languages", xlab = "Age (by years)"))
+            with(subset(data, department == "Classics/Romance Languages"), ggplot2::qplot(age, 
+                data = data[data$department == "Classics/Romance Languages", ], 
+                geom = "histogram", bins = 15, color = gender, fill = I("brown"), 
+                main = "Age Distribution of Williams Faculty in Classics/Romance Languages", 
+                xlab = "Age (by years)"))
         } else if (dpmt == "Anthropology" || dpmt == "Sociology") {
-            with(subset(data, department == "Anthropology/Sociology"), ggplot2::qplot(age, data=data[data$department=="Anthropology/Sociology",],geom="histogram", bins= 15, color=gender,fill=I("brown"), main = "Age Distribution of Williams Faculty in Anthropology/Sociology", xlab = "Age (by years)"))
+            with(subset(data, department == "Anthropology/Sociology"), ggplot2::qplot(age, 
+                data = data[data$department == "Anthropology/Sociology", ], geom = "histogram", 
+                bins = 15, color = gender, fill = I("brown"), main = "Age Distribution of Williams Faculty in Anthropology/Sociology", 
+                xlab = "Age (by years)"))
         } else {
             print("Error, department not found.")
         }

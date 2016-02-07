@@ -26,7 +26,7 @@ age_summary <- function(dpmt = FALSE, gender = FALSE) {
             age)]), as.character(name[match(min(age), age)]), mean(age), sd(age), 
             var(age)))
         df <- data.frame(attributes, attribute_data)
-        df
+        print(df)
     }
     if (gender) {
         attributes <- c("Number of Male Professors", "Number of Female Professors", 
@@ -39,7 +39,7 @@ age_summary <- function(dpmt = FALSE, gender = FALSE) {
             min(male$age), max(female$age), min(female$age), mean(male$age), mean(female$age), 
             sd(male$age), sd(female$age)))
         df <- data.frame(attributes, attribute_data)
-        df
+        print(df)
     } 
     if (dpmt) {
         departments <- unique(data$department)

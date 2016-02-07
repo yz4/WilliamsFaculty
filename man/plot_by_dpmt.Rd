@@ -15,11 +15,12 @@ a histogram of the age distribution of Williams faculty of the department
 selected
 }
 \description{
-This function generates plots of takes an input, and if that input is a department, it will create
-a histogram of the age distribution of Williams faculty of that department. If
-the input is not a department, an error message would be returned. If the input
-is one of the department in a combined category, a histogram of that category
-would be returned.
+This function generates plots with department as a factor. If there is no input,
+A qplot (boxplots) of the age data with all departments will be generated. If the input 
+is a department, it will create a histogram of the age distribution of Williams faculty of 
+that department, with bordering indicating gender. If the input is not a department, an error 
+message would be returned. If the input is one of the department in a combined category, a histogram 
+of that category would be returned.
 }
 \examples{
 plot_by_dpmt('Physics')

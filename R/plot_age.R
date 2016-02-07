@@ -11,5 +11,5 @@
 plot_age <- function() {
     par(mar = c(5.1, 4.1, 4.1, 2.1), xpd = FALSE)
     ## adjust to default margins
-    hist(data$age, main = "Age Distribution of Williams Faculty", xlab = "Age (by years)")
+    ggplot2::qplot(age, data=data, geom="bar", main="Age Distribution of Williams Faculty", xlab = "age (by years)")
 } 

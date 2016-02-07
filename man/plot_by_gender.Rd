@@ -13,7 +13,8 @@ plot_by_gender(gender)
 a histogram of the age distribution of Williams faculty of the gender selected
 }
 \description{
-This function takes an input, and if that input is a gender, it will create
+This function generates plots with gender as a factor. If there is no input, a qplot (boxplots)
+of the age data with both genders will be generated. If the input is a gender, it will create
 a histogram of the age distribution of Williams faculty of that gender. If
 the input is not a gender, an error message would be returned.
 }

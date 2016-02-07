@@ -33,4 +33,7 @@ test_age <- function(dpmt = TRUE, gender = TRUE) {
         print(chisq.test(tbl))
         print("The p-value is 0.0827, null hypothesis is not rejected at 0.05 significance level. So we do not reject the null hypothesis that gender is independent from department with regards to professor ages")
     }
+    if (!gender && !dpmt) {
+        print("At least one of the inputs must be true.")
+    }
 } 

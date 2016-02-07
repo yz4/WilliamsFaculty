@@ -4,8 +4,7 @@
 #' is specified as TRUE, the function returns a summary table with attributes of the whole dataframe.
 #' If 'gender' is set to true, the function returns a summary table with attributes of the data with
 #' regards to gender. If 'dpmt' is set to true, the function generates a DT data table with attributes of
-#' the data with regards to departments, and also a qplot that displays each professor under each department
-#' in a clear manner. 
+#' the data with regards to departments.
 #' 
 #' @param dpmt This argument is initialized as FALSE. When set to TRUE, the function generates
 #' summary of data with regards to departments
@@ -19,7 +18,7 @@
 #' age_summary(gender=TRUE)
 #' @export
 age_summary <- function(dpmt = FALSE, gender = FALSE) {
-    if (dpmt == FALSE && gender == FALSE) {
+    if (!dpmt && !gender) {
         attributes <- c("Number of Professors", "Range of Ages", "Oldest", "Youngest", 
             "Average Age", "Standard Deviation", "Variance")
         attribute_data <- with(data, c(nrow(data), max(age) - min(age), as.character(name[match(max(age), 
@@ -27,7 +26,8 @@ age_summary <- function(dpmt = FALSE, gender = FALSE) {
             var(age)))
         df <- data.frame(attributes, attribute_data)
         df
-    } else if (dpmt == FALSE && gender == TRUE) {
+    }
+    if (gender) {
         attributes <- c("Number of Male Professors", "Number of Female Professors", 
             "Oldest Male Professor", "Youngest Male Professor", "Oldest Female Professor", 
             "Youngest Female Professor", "Average Age of Male Professors", "Average Age of Female Professors", 
@@ -39,7 +39,8 @@ age_summary <- function(dpmt = FALSE, gender = FALSE) {
             sd(male$age), sd(female$age)))
         df <- data.frame(attributes, attribute_data)
         df
-    } else if (dpmt == TRUE && gender == FALSE) {
+    } 
+    if (dpmt) {
         departments <- unique(data$department)
         number_of_professors <- NULL
         for (i in departments) {
@@ -64,7 +65,6 @@ age_summary <- function(dpmt = FALSE, gender = FALSE) {
                 ], mean(age)))
         }
         df <- data.frame(departments, number_of_professors, oldest, youngest, average_age)
-        with(data, ggplot2::qplot(age, department))
         DT::datatable(df)
     }
 } 

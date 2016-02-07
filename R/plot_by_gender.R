@@ -1,6 +1,7 @@
 #' Plotting age by gender
 #' 
-#' This function takes an input, and if that input is a gender, it will create
+#' This function generates plots with gender as a factor. If there is no input, a qplot (boxplots)
+#' of the age data with both genders will be generated. If the input is a gender, it will create
 #' a histogram of the age distribution of Williams faculty of that gender. If
 #' the input is not a gender, an error message would be returned.
 #' 
@@ -18,14 +19,15 @@ plot_by_gender <- function(gender) {
     par(mar = c(5.1, 4.1, 4.1, 2.1), xpd = FALSE)
     ## adjust to default margins
     if (missing(gender)) {
-        print("Please select a gender.")
+        ggplot2::qplot(gender, age, data=data, geom="boxplot",fill=gender, ylab="age (by years)", 
+                       main="Boxplots of Professor Ages by Gender")
     } else {
         if (tolower(gender) == "male") {
-            with(subset(data, gender == "Male"), hist(age, main = "Age Distribution of Male Williams Faculty", 
-                xlab = "Age (by years)"))
+            with(subset(data, gender == "Male"), ggplot2::qplot(age, main = "Age Distribution of Male Williams Faculty", 
+                geom = "bar", xlab = "Age (by years)"))
         } else if (tolower(gender) == "female") {
-            with(subset(data, gender == "Female"), hist(age, main = "Age Distribution of Female Williams Faculty", 
-                xlab = "Age (by years)"))
+            with(subset(data, gender == "Female"), ggplot2::qplot(age, main = "Age Distribution of Female Williams Faculty", 
+                geom = "bar", xlab = "Age (by years)"))
         } else {
             print("Error, please select a gender")
         }

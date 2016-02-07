@@ -1,9 +1,9 @@
 #' A package to visualize data on Williams faculty age
 #' 
-#' \tabular{ll}{ Package \tab williamsFaculty \cr Type: \tab Package\cr 
+#' \tabular{ll}{ Package \tab WilliamsFaculty \cr Type: \tab Package\cr 
 #' Version: \tab 1.0\cr Date: \tab 2016-02-03\cr License: \tab GPL-3\cr }
 #' 
-#' The williamsFaculty package focuses on the ages of Williams College faculty members.
+#' The WilliamsFaculty package focuses on the ages of Williams College faculty members.
 #' The package explores the age data, with special attention paid to two factors: department and gender. 
 #' The package provides functions that generate summary tables and functions that generate interesting 
 #' visual presentations of the data. Some functions generate different summaries and plots depending on 
@@ -18,6 +18,6 @@
 #' 403 Williams faculty members. All the functions are created to work with this data frame only. A useful future modification
 #' to the package would be allowing users to import their own data frames. 
 #' 
-#' @name williamsFaculty-package
+#' @name WilliamsFaculty-package
 #' @docType package
 NULL 

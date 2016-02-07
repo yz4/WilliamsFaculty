@@ -1,8 +1,8 @@
 #' Generates a summary of relevant data
 #' 
 #' This functions generates summaries of the data. If neither 'dpmt' or 'gender'
-#' is specified as TRUE, the function returns a summary table with attributes of the whole dataframe.
-#' If 'gender' is set to true, the function returns a summary table with attributes of the data with
+#' is specified as TRUE, the function returns a data frame with attributes of the whole dataframe.
+#' If 'gender' is set to true, the function returns a data frame with attributes of the data with
 #' regards to gender. If 'dpmt' is set to true, the function generates a DT data table with attributes of
 #' the data with regards to departments.
 #' 
@@ -26,7 +26,7 @@ age_summary <- function(dpmt = FALSE, gender = FALSE) {
             age)]), as.character(name[match(min(age), age)]), mean(age), sd(age), 
             var(age)))
         df <- data.frame(attributes, attribute_data)
-        print(df)
+        return(df)
     }
     if (gender) {
         attributes <- c("Number of Male Professors", "Number of Female Professors", 
@@ -39,7 +39,7 @@ age_summary <- function(dpmt = FALSE, gender = FALSE) {
             min(male$age), max(female$age), min(female$age), mean(male$age), mean(female$age), 
             sd(male$age), sd(female$age)))
         df <- data.frame(attributes, attribute_data)
-        print(df)
+        return(df)
     }
     if (dpmt) {
         departments <- unique(data$department)
@@ -66,6 +66,6 @@ age_summary <- function(dpmt = FALSE, gender = FALSE) {
                 ], mean(age)))
         }
         df <- data.frame(departments, number_of_professors, oldest, youngest, average_age)
-        DT::datatable(df)
+        return(DT::datatable(df))
     }
 } 

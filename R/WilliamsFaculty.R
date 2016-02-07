@@ -18,6 +18,6 @@
 #' 403 Williams faculty members. All the functions are created to work with this data frame only. A useful future modification
 #' to the package would be allowing users to import their own data frames. 
 #' 
-#' @name WilliamsFaculty-package
+#' @name WilliamsFaculty
 #' @docType package
 NULL 

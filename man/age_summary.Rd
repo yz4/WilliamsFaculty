@@ -18,8 +18,8 @@ summaries of data depending on input
 }
 \description{
 This functions generates summaries of the data. If neither 'dpmt' or 'gender'
-is specified as TRUE, the function returns a summary table with attributes of the whole dataframe.
-If 'gender' is set to true, the function returns a summary table with attributes of the data with
+is specified as TRUE, the function returns a data frame with attributes of the whole dataframe.
+If 'gender' is set to true, the function returns a data frame with attributes of the data with
 regards to gender. If 'dpmt' is set to true, the function generates a DT data table with attributes of
 the data with regards to departments.
 }

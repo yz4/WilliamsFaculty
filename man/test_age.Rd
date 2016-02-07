@@ -23,4 +23,7 @@ If dpmt is TRUE and gender is FALSE, the ANOVA test is performed. \cr
 If dpmt is FALSE and gender is TRUE, the binomial test and the t-test are performed. \cr
 If both are TRUE, the chi-squared test of independence is performed.
 }
+\examples{
+test_age(dpmt=FALSE)
+}
 

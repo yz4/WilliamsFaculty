@@ -11,6 +11,7 @@
 #' @param dpmt This argument is initialized as TRUE, and controls which test is performed
 #' @param gender This argument is initialized as TRUE, and controls which test is performed
 #' @return different statistical analysis on the data depending on the input
+#' @examples test_age(dpmt=FALSE)
 #' @export
 test_age <- function(dpmt = TRUE, gender = TRUE) {
     data(data)
@@ -18,6 +19,7 @@ test_age <- function(dpmt = TRUE, gender = TRUE) {
         results = aov(age ~ department, data = data)
         print(summary(results))
         print("The p-value is 0.0244, null hypothesis rejected at 0.05 significance level. So we reject the null hypothesis that all departments have the same mean age.")
+        return(summary(results))
     }
     if (!dpmt && gender) {
         number_of_professors = nrow(data)
@@ -28,11 +30,13 @@ test_age <- function(dpmt = TRUE, gender = TRUE) {
         female_ages = data[data$gender == "Female", ]$age
         print(t.test(male_ages, female_ages, alternative = "greater"))
         print("The p-value is 1.202e-05, null hypothesis rejected at 0.05 significance level. So we reject the null hypothesis that the mean ages of male and female professors are the same.")
+        return(t.test(male_ages, female_ages, alternative = "greater"))
     }
     if (gender && dpmt) {
         tbl = with(data, table(gender, department))
-        print(chisq.test(tbl))
-        print("The p-value is 0.0827, null hypothesis is not rejected at 0.05 significance level. So we do not reject the null hypothesis that gender is independent from department with regards to professor ages")
+        print(chisq.test(tbl, simulate.p.value = TRUE))
+        print("Null hypothesis is not rejected at 0.05 significance level. So we do not reject the null hypothesis that gender is independent from department with regards to professor ages")
+        return(chisq.test(tbl, simulate.p.value = TRUE))
     }
     if (!gender && !dpmt) {
         print("At least one of the inputs must be true.")

@@ -25,8 +25,6 @@ test_age <- function(dpmt = TRUE, gender = TRUE) {
         number_of_professors = nrow(data)
         number_of_female_professors = nrow(data[data$gender == "Female", ])
         print(binom.test(number_of_female_professors, number_of_professors, alternative = "less"))
-        cat(paste("For the binomial test, the p-value is 0.000988, null hypothesis rejected at 0.05 significance level.", 
-              "So we reject the null hypothesis that the probability of a professor being female is 0.5.", sep='\n'))
         male_ages = data[data$gender == "Male", ]$age
         female_ages = data[data$gender == "Female", ]$age
         cat(paste("For the t-test, the p-value is 1.202e-05, null hypothesis rejected at 0.05 significance level.",

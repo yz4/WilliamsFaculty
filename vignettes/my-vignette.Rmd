@@ -67,6 +67,7 @@ Note that the youngest and oldest professors are marked. The index (x-axis) is t
 color_by_dpmt(c("Physics/Astronomy","Theatre/Dance","Languages"))
 ```
 
+
 ## Results
 Some important results include the mean age, and the results from the statistical analysis performed on the data with regards to department and gender. The mean age is about 51, calculated with `average_age()`.
 ```{r}

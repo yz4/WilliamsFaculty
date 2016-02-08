@@ -1,0 +1,63 @@
+---
+title: "WilliamsFaculty"
+author: "Yiheng Zhang"
+date: "2016-02-05"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{WilliamsFaculty}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+```{r, echo=FALSE, include=FALSE}
+library(xlsx)
+library(DT)
+library(ggplot2)
+data=read.xlsx(system.file("extdata","data.xlsx", package="WilliamsFaculty"),1)
+```
+### Introduction
+This package explores the age data of all Williams faculty, with special attention paid to two factors: department and gender. The package provides functions that generate summary tables and interesting visual presentations of the data. Some functions generate different summaries and plots depending on the user's input, setting the focus to department or gender. In addition, the package also contains a function that performs statistical analysis on the data.
+
+The original question that this package seeks to answer is: __What is the average age of Williams faculty?__ This package contains a function `average_age()` that answers that question directly, offering a numerical value. The other functions explore visually and statistically the relationship between age and gender/department. The package relies on ggplot2 for interesting plots and DT for interactive data tables. 
+
+### Data
+The data frame used for this package is internal and comes with the package itself. The original data is retrieved from <http://web.williams.edu/admin/registrar//catalog/archive.html> under the 2013-14 school year. The professor names, departments, genders, and ages are compiled by hand into an excel file which can be found under `/inst/extdata`, which is then changed into an RData file through the use of the "xlsx" package. The names and departments are copied directly from the Williams archive, but the gender is guessed from the professor's first name, and the ages are estimated using the year the professor received his/her BA, assuming that the professor is 22 years old at that time. A few visiting professors/lecturers whose education records were not locatable have been omitted from the dataset. Some departments with very few professors have been combined with other departments in the same field to form categories, such as `"Physics/Astronomy"` and "`Theatre/Dance`".
+
+Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
+
+## Styles
+
+The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
+
+    output: 
+      rmarkdown::html_vignette:
+        css: mystyles.css
+
+## Figures
+
+The figure sizes have been customised so that you can easily put two images side-by-side. 
+
+```{r, fig.show='hold'}
+plot(1:10)
+plot(10:1)
+```
+
+You can enable figure captions by `fig_caption: yes` in YAML:
+
+    output:
+      rmarkdown::html_vignette:
+        fig_caption: yes
+
+Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
+
+## More Examples
+
+You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
+
+```{r, echo=FALSE, results='asis'}
+DT::datatable(head(data))
+```
+
+Also a quote using `>`:
+
+> "He who gives up [code] safety for [code] speed deserves neither."
+([via](https://twitter.com/hadleywickham/status/504368538874703872))

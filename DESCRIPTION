@@ -17,4 +17,7 @@ RoxygenNote: 5.0.1
 LazyData: true
 URL: https://github.com/yz4/WilliamsFaculty
 BugReports: https://github.com/yz4/WilliamsFaculty/issues
-Suggests: testthat
+Suggests: testthat,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

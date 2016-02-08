@@ -23,8 +23,8 @@ age_summary <- function(dpmt = FALSE, gender = FALSE) {
         attributes <- c("Number of Professors", "Range of Ages", "Oldest", "Youngest", 
             "Average Age", "Standard Deviation", "Variance")
         attribute_data <- with(data, c(nrow(data), max(age) - min(age), as.character(name[match(max(age), 
-            age)]), as.character(name[match(min(age), age)]), mean(age), sd(age), 
-            var(age)))
+            age)]), as.character(name[match(min(age), age)]), round(mean(age),2), round(sd(age),2), 
+            round(var(age),2)))
         df <- data.frame(attributes, attribute_data)
         return(df)
     }
@@ -40,7 +40,7 @@ age_summary <- function(dpmt = FALSE, gender = FALSE) {
                                        with(data[data$gender == "Male", ], paste(as.character(name[match(min(age), age)]), ", ", min(age), sep = "")), 
                                        with(data[data$gender == "Female", ], paste(as.character(name[match(max(age), age)]), ", ", max(age), sep = "")),
                                        with(data[data$gender == "Female", ], paste(as.character(name[match(min(age), age)]), ", ", min(age), sep = "")), 
-                                       mean(male$age), mean(female$age), sd(male$age), sd(female$age)))
+                                       round(mean(male$age),2), round(mean(female$age),2), round(sd(male$age),2), round(sd(female$age),2)))
         df <- data.frame(attributes, attribute_data)
         return(df)
     }
@@ -66,7 +66,7 @@ age_summary <- function(dpmt = FALSE, gender = FALSE) {
         average_age <- NULL
         for (i in departments) {
             average_age <- c(average_age, with(data[data$department == as.character(i), 
-                ], mean(age)))
+                ], round(mean(age),2)))
         }
         df <- data.frame(departments, number_of_professors, oldest, youngest, average_age)
         return(DT::datatable(df))

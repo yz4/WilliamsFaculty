@@ -40,6 +40,10 @@ The rest of the functions in the package help the user explore the relations bet
 ```{r}
 age_summary(gender=TRUE)
 ```
+The user can also set `dpmt=TRUE` to generate a DT table with data focusing on departments:
+```{r}
+age_summary(dpmt=TRUE)
+```
 ## Figures
 
 The figure sizes have been customised so that you can easily put two images side-by-side. 

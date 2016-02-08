@@ -35,9 +35,12 @@ age_summary <- function(dpmt = FALSE, gender = FALSE) {
             "SD of Male Professor Ages", "SD of Female Professor Ages")
         male = data[data$gender == "Male", ]
         female = data[data$gender == "Female", ]
-        attribute_data <- with(data, c(nrow(male), nrow(female), max(male$age), 
-            min(male$age), max(female$age), min(female$age), mean(male$age), mean(female$age), 
-            sd(male$age), sd(female$age)))
+        attribute_data <- with(data, c(nrow(male), nrow(female), 
+                                       with(data[data$gender == "Male", ], paste(as.character(name[match(max(age), age)]), ", ", max(age), sep = "")), 
+                                       with(data[data$gender == "Male", ], paste(as.character(name[match(min(age), age)]), ", ", min(age), sep = "")), 
+                                       with(data[data$gender == "Female", ], paste(as.character(name[match(max(age), age)]), ", ", max(age), sep = "")),
+                                       with(data[data$gender == "Female", ], paste(as.character(name[match(min(age), age)]), ", ", min(age), sep = "")), 
+                                       mean(male$age), mean(female$age), sd(male$age), sd(female$age)))
         df <- data.frame(attributes, attribute_data)
         return(df)
     }

@@ -28,7 +28,7 @@ plot_by_dpmt('Theatre/Dance')
 }
 \seealso{
 \code{\link{plot_age}} for histogram of all ages, \code{\link{plot_by_gender}}
-for histograms by gender, \code{\link{color_by_gender}} for colored scatter plot by gender, and
+for boxplots and histograms by gender, \code{\link{color_by_gender}} for colored scatter plot by gender, and
 \code{\link{color_by_dpmt}} for colored scatter plot by department
 
 Other plotting.functions: \code{\link{color_by_dpmt}},

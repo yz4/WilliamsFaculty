@@ -16,8 +16,9 @@ This functions creates a histogram of the age distribution of all Williams facul
 plot_age()
 }
 \seealso{
-\code{\link{plot_by_dpmt}} for histograms by department, \code{\link{plot_by_gender}}
-for histograms by gender,
+\code{\link{plot_by_dpmt}} for boxplots and histograms by department, \code{\link{plot_by_gender}}
+for boxplots and histograms by gender, \code{\link{color_by_gender}} for colored scatter plot by gender, and
+\code{\link{color_by_dpmt}} for colored scatter plot by department
 
 Other plotting.functions: \code{\link{color_by_dpmt}},
   \code{\link{color_by_gender}},

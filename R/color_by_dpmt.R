@@ -13,7 +13,7 @@
 #' @param dpmt_displayed This input should include the names of the departments desired, in the form of a list
 #' @family plotting functions
 #' @seealso \code{\link{plot_age}} for histogram of all ages, \code{\link{plot_by_dpmt}}
-#' for histograms by department, \code{\link{plot_by_gender}} for histograms by gender, and
+#' for boxplots and histograms by department, \code{\link{plot_by_gender}} for boxplots and histograms by gender, and
 #' \code{\link{color_by_gender}} for colored scatter plot by gender
 #' 
 #' @return a colored scatter plot of Williams faculty ages by department

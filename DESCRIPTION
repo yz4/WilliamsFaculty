@@ -18,6 +18,5 @@ LazyData: true
 URL: https://github.com/yz4/WilliamsFaculty
 BugReports: https://github.com/yz4/WilliamsFaculty/issues
 Suggests: testthat,
-    knitr,
-    rmarkdown
+    knitr
 VignetteBuilder: knitr

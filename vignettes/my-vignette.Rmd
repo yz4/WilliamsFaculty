@@ -25,7 +25,7 @@ The data frame used for this package is internal and comes with the package itse
 ```{r, fig.width=5, fig.height=5}
 plot_age()
 ```
-The distribution is slightly right-skewed. More characteristics of the distribution will be included in the result section.
+The distribution is slightly right-skewed. More characteristics of the distribution will be included in a summary table in the next section.
 
 ## Use WilliamsFaculty
 First and foremost, to find out the average age of the Williams faculty, simply use the function `average_age()`, which returns a numerical value (all numerical values are limited to 2 decimal digits). To find out more about the age data in general, the user can use the function `plot_age()` to generate the generic histogram as shown above, and `age_summary()` to return a summary table like this:

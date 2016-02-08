@@ -28,7 +28,7 @@ plot_age()
 The distribution is slightly right-skewed. More characteristics of the distribution will be included in the result section.
 
 ## Use WilliamsFaculty
-First and foremost, to find out the average age of the Williams faculty, simply use the function `average_age()`, which returns a numerical value. To find out more about the age data in general, the user can use the function `plot_age()` to generate the generic histogram as shown above, and `age_summary()` to return a summary table like this:
+First and foremost, to find out the average age of the Williams faculty, simply use the function `average_age()`, which returns a numerical value (all numerical values are limited to 2 decimal digits). To find out more about the age data in general, the user can use the function `plot_age()` to generate the generic histogram as shown above, and `age_summary()` to return a summary table like this:
 ```{r}
 age_summary()
 ```
@@ -44,32 +44,54 @@ The user can also set `dpmt=TRUE` to generate a DT table with data focusing on d
 ```{r}
 age_summary(dpmt=TRUE)
 ```
-## Figures
-
-The figure sizes have been customised so that you can easily put two images side-by-side. 
-
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
+To visualize the department and gender data, the user can use functions `plot_by_dpmt`, `plot_by_gender`,`color_by_dpmt`, and `color_by_gender`. The first two functions generates boxplots of ages of each department and gender:
+```{r,fig.width=8}
+plot_by_dpmt()
+```
+```{r, fig.width=5}
+plot_by_gender()
+```
+The function `plot_by_dpmt` can also take in input. If the user wishes to see the distribution of ages within a specific department, the user can simply input the department like this: `plot_by_dpmt("Languages")`.
+```{r}
+plot_by_dpmt("Languages")
+```
+Note that the histograms are also outlined to give a sense of the gender division within that department. The latter two functions generate colored scatter plots that present each professor as a point in the scatter plot. The `color_by_gender()` function separates the male and female professors by color, while the `color_by_dpmt()` function separates professors in each department by color:
+```{r,fig.width=6,fig.height=5}
+color_by_gender()
+```
+```{r,fig.width=6,fig.height=6}
+color_by_dpmt()
+```
+Note that the youngest and oldest professors are marked. The index (x-axis) is the professor's index in the original data, and since the data is in alphabetical order, the index gives a sense of what the professor's last name starts with. Again, the user can see data about any specific department(s) with `color_by_dpmt()` if the user gives an input.
+```{r, fig.width=6,fig.height=6}
+color_by_dpmt(c("Physics/Astronomy","Theatre/Dance","Languages"))
 ```
 
-You can enable figure captions by `fig_caption: yes` in YAML:
-
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
-
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
-
-## More Examples
-
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
-
-```{r, echo=FALSE, results='asis'}
-DT::datatable(head(data))
+## Results
+Some important results include the mean age, and the results from the statistical analysis performed on the data with regards to department and gender. The mean age is about 51, calculated with `average_age()`.
+```{r}
+average_age()
 ```
+To explore the relationship between gender and age, the user can use `test_age(gender=TRUE,dpmt=FALSE)`, which first performs a binomial test on the number of female professors, and then performs a two-sample t-test on the ages of professors of each gender. 
+```{r}
+test_age(gender=TRUE, dpmt=FALSE)
+```
+To explore the relationship between department and age, the user can use `test_age(gender=FALSE,dpmt=TRUE)`, which performs an analysis of variance on the number of professors of each department.
+```{r}
+test_age(gender=FALSE, dpmt=TRUE)
+```
+To explore whether department and gender are independent, the user can use `test_age()`, which performs a chi-squared test of independence on the number of professors of each gender and in each department. 
+```{r}
+test_age()
+```
+The results of the analysis seem to suggest that:
 
-Also a quote using `>`:
+* There are more male professors than female professors.
+* Male professors may be older than female professors on average.
+* The department that the professors are in may be related with the ages of the professors.
+* There seem not to be any relation between the professor's gender and the department that he/she is in.
 
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
+## Conclusion
+The __WilliamsFaculty__ package calculates the average age of Williams College faculty, and presents the data in an interesting and interactive way. In addition, the package analyzes the relationships between age and department and between age and gender, providing functions to perform statistical analysis and also visualization of the relationships. 
+
+The package contains an internal data frame, called __data__, and the package's contents only work with that particular data frame. A helpful future modification would be to allow users to import their own data frames or raw data files. 

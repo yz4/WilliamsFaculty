@@ -69,6 +69,6 @@ age_summary <- function(dpmt = FALSE, gender = FALSE) {
                 ], round(mean(age),2)))
         }
         df <- data.frame(departments, number_of_professors, oldest, youngest, average_age)
-        return(DT::datatable(df))
+        return(DT::datatable(df,options=list(pageLength=6L)))
     }
 } 

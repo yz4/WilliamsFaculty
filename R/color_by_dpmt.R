@@ -39,7 +39,7 @@ color_by_dpmt <- function(dpmt_displayed) {
             c = c + 1
         }
         points(20, 80, pch = 3, col = "black")  ## oldest professor
-        points(259, 27, pch = 4, col = "black")  ## youngest professor
+        points(258, 27, pch = 4, col = "black")  ## youngest professor
         legend(430, 90, col = c(1:22, "black", "black"), legend = c(as.character(departmentlist), 
             "Oldest", "Youngest"), bty = "n", pch = c(1, 1, 1, 1, 1, 1, 1, 1, 1, 
             1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 4), title = "Departments", 

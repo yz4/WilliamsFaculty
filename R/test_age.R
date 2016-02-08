@@ -17,25 +17,26 @@ test_age <- function(dpmt = TRUE, gender = TRUE) {
     data(data)
     if (dpmt && !gender) {
         results = aov(age ~ department, data = data)
-        print(summary(results))
-        print("The p-value is 0.0244, null hypothesis rejected at 0.05 significance level. So we reject the null hypothesis that all departments have the same mean age.")
+        print("The p-value is 0.0244, null hypothesis rejected at 0.05 significance level. 
+              So we reject the null hypothesis that all departments have the same mean age.")
         return(summary(results))
     }
     if (!dpmt && gender) {
         number_of_professors = nrow(data)
         number_of_female_professors = nrow(data[data$gender == "Female", ])
         print(binom.test(number_of_female_professors, number_of_professors, alternative = "less"))
-        print("The p-value is 0.000988, null hypothesis rejected at 0.05 significance level. So we reject the null hypothesis that the probability of a professor being female is 0.5.")
+        print("The p-value is 0.000988, null hypothesis rejected at 0.05 significance level. 
+              So we reject the null hypothesis that the probability of a professor being female is 0.5.")
         male_ages = data[data$gender == "Male", ]$age
         female_ages = data[data$gender == "Female", ]$age
-        print(t.test(male_ages, female_ages, alternative = "greater"))
-        print("The p-value is 1.202e-05, null hypothesis rejected at 0.05 significance level. So we reject the null hypothesis that the mean ages of male and female professors are the same.")
+        print("The p-value is 1.202e-05, null hypothesis rejected at 0.05 significance level. 
+              So we reject the null hypothesis that the mean ages of male and female professors are the same.")
         return(t.test(male_ages, female_ages, alternative = "greater"))
     }
     if (gender && dpmt) {
         tbl = with(data, table(gender, department))
-        print(chisq.test(tbl, simulate.p.value = TRUE))
-        print("Null hypothesis is not rejected at 0.05 significance level. So we do not reject the null hypothesis that gender is independent from department with regards to professor ages")
+        print("Null hypothesis is not rejected at 0.05 significance level. So we do not reject the null 
+              hypothesis that gender is independent from department with regards to professor ages")
         return(chisq.test(tbl, simulate.p.value = TRUE))
     }
     if (!gender && !dpmt) {
